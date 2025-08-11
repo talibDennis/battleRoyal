@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Battle {
     // object creation
-    private static Ink ink = new Ink();
+    private static Printer ink = new Printer();
     private static Validator validator = new Validator();
     // private static MusicPlayer musicPlayer = new MusicPLayer();
     private static Random randNum = new Random();

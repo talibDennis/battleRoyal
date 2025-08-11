@@ -4,7 +4,7 @@ import warrior.*;
 import weapon.*;
 import armour.*;
 
-public class Ink {
+public class Printer {
   // ANSI escape codes
   public static final String RESET = "\u001B[0m";
   public static final String BLACK = "\u001B[30m"; // not really black
@@ -25,18 +25,18 @@ public class Ink {
   public static final String BG_CYAN = "\u001B[46m";
   public static final String BG_WHITE = "\u001B[47m";
 
-  public Ink() {} // zero-arg contructor
+  public Printer() {} // zero-arg contructor
 
   public void welcome() {
     System.out.println("///////////////////////////////////");
     System.out.println(BLUE + "///// Welcome to Warsim 2025! /////");
-    System.out.println(WHITE + "///////////////////////////////////\n");
+    System.out.println(WHITE + "///////////////////////////////////\n" + RESET);
   } // welcome
 
   public void goodbye() {
     System.out.println(YELLOW + "\n*********************************");
     System.out.println(PURPLE + "///// Thank you for playing!! /////");
-    System.out.println(YELLOW + "***********************************\n");
+    System.out.println(YELLOW + "***********************************\n" + RESET);
   } // goodbye
 
   public void printStats(Warrior player, Weapon pWeapon, Armour pArmour,
