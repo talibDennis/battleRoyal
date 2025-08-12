@@ -25,7 +25,7 @@ public abstract class Warrior {
     public int getDexterity() {
         return this.dexterity;
     } // getDexterity()
-    public String getWorriorType() {
+    public String getWarriorType() {
         return this.warriorType;
     } // getWarriorType()
       public boolean isAlive() {

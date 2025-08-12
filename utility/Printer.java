@@ -3,6 +3,8 @@ package utility;
 import warrior.*;
 import weapon.*;
 import armour.*;
+import weather.*;
+import stadium.*;
 
 public class Printer {
   // ANSI escape codes
@@ -27,75 +29,19 @@ public class Printer {
 
   public Printer() {} // zero-arg contructor
 
-  public void welcome() {
-    System.out.println("///////////////////////////////////");
-    System.out.println(BLUE + "///// Welcome to Warsim 2025! /////");
-    System.out.println(WHITE + "///////////////////////////////////\n" + RESET);
-  } // welcome
+  public void welcome(Weather weather, Stadium stadium) {
+    System.out.println("///////////////////////////////////////////");
+    System.out.println("// Welcome to Warsim 2025 Beta edition.");
+    System.out.printf("// The stadium type is: %s!%n", stadium.getType());
+    System.out.printf("// It's a %s day, good luck!%n", weather.getType());
+    System.out.println("/////////////////////////////////////////");
+  } // welcomeMessage()
 
-  public void goodbye() {
-    System.out.println(YELLOW + "\n*********************************");
-    System.out.println(PURPLE + "///// Thank you for playing!! /////");
-    System.out.println(YELLOW + "***********************************\n" + RESET);
-  } // goodbye
-
-  public void printStats(Warrior player, Weapon pWeapon, Armour pArmour,
-    Warrior enemy, Weapon eWeapon, Armour eArmour) {
-    System.out.println("/////////////////////////////");
-    System.out.printf("/// %s(%s) Stats:%n", "Player ", player.getType());
-    System.out.printf("/// " + BLUE + "Armour:    %s%n" + RESET, pArmour.getType());
-    System.out.printf("/// Weapon:    %s%n", pWeapon.getType());
-    System.out.printf("/// Health:    %12d%n", player.getHealth());
-    System.out.printf("/// Strength:  %12d%n", player.getStrength());
-    System.out.printf("/// Dexterity: %12d%n", player.getDexterity());
-    System.out.println("/////////////////////////////\n");
-    System.out.printf("/// %s(%s) Stats:%n", "Enemy ", enemy.getType());
-    System.out.printf("/// Armour:    %s%n", eArmour.getType());
-    System.out.printf("/// Weapon:    %s%n", eWeapon.getType());
-    System.out.printf("/// Health:    %12d%n", enemy.getHealth());
-    System.out.printf("/// Strength:  %12d%n", enemy.getStrength());
-    System.out.printf("/// Dexterity: %12d%n", enemy.getDexterity());
-    System.out.println("/////////////////////////////\n");
-  } // printStats()
-
-  public void printResults(String who, int damage, Warrior warrior) {
-    System.out.println("/////////////////////////////////////////////////");
-    if(who.equals("Player")) {
-      if(damage > 0) {
-        System.out.printf("/// %s does %d points of damage leaving%n/// enemy with %d points left...%n", 
-        who, damage, warrior.getHealth());
-      }
-      else {
-        System.out.printf("/// %s misses enemy still has %d%n", 
-        who, warrior.getHealth());
-      }
-    }
-    else {
-      if(damage > 0) {
-        System.out.printf("/// %s does %d points of damage leaving%n/// player with %d points left...%n", 
-        who, damage, warrior.getHealth());
-      }
-      else {
-        System.out.printf("/// %s misses player still has %d%n", 
-        who, warrior.getHealth());
-      }
-    }
-    System.out.println("/////////////////////////////////////////////////\n");
-  }
-
-  public void attackResult(float damage, Warrior warrior, String who) {
-    if(damage > 0) {
-      System.out.printf(GREEN + "%s %s deals %.0f points of damage!%n", who, warrior.getType(), damage);
-      System.out.printf("%.0f health points removed!%n", damage);
-      System.out.printf("Remaining health points %d!%n" + RESET, warrior.getHealth());
-      System.out.println();
-    }
-    else {
-      // System.out.println(RED + "This text is red!" + RESET);
-      System.out.printf(RED + "%n%s %s MISSES!%n%n" + RESET, who, warrior.getType());
-    }
-  } // attackResult()
-
+    public void gameOver(String winner) {
+    System.out.println("///////////////////////////////////////////");
+    System.out.printf("// %s Wins the match awesome job!%n", winner);
+    System.out.println("/////////////////////////////////////////");
+  } // welcomeMessage()
   public void playAgainMenu() {
     System.out.println("///////////////////////////////////////////");
     System.out.println("// Play again?");
@@ -113,38 +59,65 @@ public class Printer {
   } // continueGameMenu()
 
   public void warriorMenu() {
-    System.out.println("/////////////////////////////");
-    System.out.println("/// Select your warrior: ");
-    System.out.println("/// 1) Orc");
-    System.out.println("/// 2) Elf");
-    System.out.println("/// 3) Human");
-    System.out.println("/////////////////////////////\n");
-  } // warriorMenu()
+    System.out.println("Pick a warrior:");
+    System.out.printf("1) Human%n");
+    System.out.printf("2) Elf%n");
+    System.out.printf("3) Orc%n");
+  } // printWarriorMenu()
 
   public void weaponMenu() {
-    System.out.println("/////////////////////////////");
-    System.out.println("/// Select your weapon: ");
-    System.out.println("/// 1) Dagger");
-    System.out.println("/// 2) Sword");
-    System.out.println("/// 3) Axe");
-    System.out.println("/////////////////////////////\n");
-  } // weaponMenu()
+    System.out.println("Pick a weapon:");
+    System.out.printf("1) Dagger%n");
+    System.out.printf("2) Sword%n");
+    System.out.printf("3) Axe%n");
+  } // printWeaponMenu()
 
   public void armourMenu() {
-    System.out.println("/////////////////////////////");
-    System.out.println("/// Select your armour: ");
-    System.out.println("/// 1) Leather");
-    System.out.println("/// 2) Chainmail");
-    System.out.println("/// 3) Platemail");
-    System.out.println("/////////////////////////////\n");
-  } // armourMenu()
+    System.out.println("Pick your armour:");
+    System.out.printf("1) Leather%n");
+    System.out.printf("2) Chainmail%n");
+    System.out.printf("3) Platemail%n");
+  } // printArmourMenu()
 
   public void attackMenu() {
-    System.out.println("/////////////////////////////");
-    System.out.println("/// Select your attack: ");
-    System.out.println("/// 1) Normal");
-    System.out.println("/// 2) Heavy");
-    System.out.println("/////////////////////////////\n");
+    System.out.println("\nPick an Attack:");
+    System.out.printf("1) Light%n");
+    System.out.printf("2) Heavy%n");
+    System.out.printf("3) Save & Quit%n");
   } // attackMenu()
+
+  public void stadiumMenu() {
+    System.out.println("\nPick a Stadium:");
+    System.out.printf("1) Level Ground%n");
+    System.out.printf("2) Hilly%n");
+    System.out.printf("3) Sandy%n");
+  } // attackMenu()
+  
+  public void goodbye() {
+    System.out.println(YELLOW + "\n*********************************");
+    System.out.println(PURPLE + "///// Thank you for playing!! /////");
+    System.out.println(YELLOW + "***********************************\n" + RESET);
+  } // goodbye
+
+  public void stats(Warrior warrior, Weapon weapon, Armour armour) {
+    System.out.printf("%nYou're are a: %s with a %s wearing %s%n", 
+      warrior.getWarriorType(), weapon.getWeaponType(), armour.getArmourType());
+    System.out.printf("Health: %d%n", warrior.getHealth());
+    System.out.printf("Strength: %d%n", warrior.getStrength());
+    System.out.printf("Dexterity: %d%n", warrior.getDexterity());
+  } // stats()
+
+  public void attackResult(int damage, Warrior warrior, String who) {
+    if(damage > 0) {
+      System.out.printf(GREEN + "%n%s %s HITS for %d points!%n", who, warrior.getWarriorType(), damage);
+      System.out.printf("%d health points removed!%n", damage);
+      System.out.printf("%d health points remain!%n" + RESET, warrior.getHealth());
+      System.out.println();
+    }
+    else {
+      // System.out.println(RED + "This text is red!" + RESET);
+      System.out.printf(RED + "%n%s %s MISSES!%n" + RESET, who, warrior.getWarriorType());
+    }
+  } // attackResult()
   
 } // class
