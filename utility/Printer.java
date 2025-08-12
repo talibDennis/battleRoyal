@@ -45,8 +45,8 @@ public class Printer {
     System.out.println("/////////////////////////////////////////");
   } // continueGameMenu()
 
-  public void stadiumMenu() {
-    System.out.println("\nPick a Stadium:");
+  public void terrainMenu() {
+    System.out.println("\nPick a Terrain:");
     System.out.printf("1) Ground%n");
     System.out.printf("2) Hill%n");
     System.out.printf("3) Sand%n");
@@ -74,7 +74,7 @@ public class Printer {
   } // printArmourMenu()
 
   public void playerStats(Warrior warrior, Weapon weapon, Armour armour) {
-    System.out.printf("%nYou're a %s with a %s wearing %s%n.", 
+    System.out.printf("%nYou're a %s with a %s wearing %s.%n", 
       warrior.getWarriorType(), weapon.getWeaponType(), armour.getArmourType());
     System.out.printf("Health: %d%n", warrior.getHealth());
     System.out.printf("Strength: %d%n", warrior.getStrength());
@@ -82,7 +82,7 @@ public class Printer {
   } // stats()
 
   public void enemyStats(Warrior warrior, Weapon weapon, Armour armour) {
-    System.out.printf("%nYour enemy is a %s with a %s wearing %s%n.", 
+    System.out.printf("%nYour enemy is a %s with a %s wearing %s.%n", 
       warrior.getWarriorType(), weapon.getWeaponType(), armour.getArmourType());
     System.out.printf("Health: %d%n", warrior.getHealth());
     System.out.printf("Strength: %d%n", warrior.getStrength());
@@ -90,10 +90,10 @@ public class Printer {
   } // enemyStats()
 
   // game-start welcome screen
-  public void welcome(Weather weather, Terrain stadium) {
+  public void welcome(Weather weather, Terrain terrain) {
     System.out.println("///////////////////////////////////////////");
     System.out.println("// Welcome to Warsim 2025 Beta edition.");
-    System.out.printf("** The stadium type is: %s!%n", stadium.getType());
+    System.out.printf("** The terrain is: %s!%n", terrain.getType());
     System.out.printf("** It's a %s day.%n", weather.getType());
     System.out.printf("** Spoils go to the victor!%n"); // implement a scorring system
 

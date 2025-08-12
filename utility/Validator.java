@@ -78,9 +78,9 @@ public class Validator {
     return number;
   } // validate()
 
-  public int validateStadium() {
+  public int validateTerrain() {
     boolean isValid = false;
-    print.stadiumMenu();
+    print.terrainMenu();
 
     while(!isValid) {
       try {
