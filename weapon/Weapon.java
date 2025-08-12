@@ -30,6 +30,9 @@ public abstract class Weapon {
   public void setDamageAmount(int damageAmount) {
     this.damageAmount = damageAmount;
   } // setDamageAmount()
+  public void setDexterityCost(int dexterityCost) {
+    this.dexterityCost = dexterityCost;
+  } // setDexterityCost()
   public void setWeaponType(String weaponType) {
     this.weaponType = weaponType;
   } // setWeaponType()

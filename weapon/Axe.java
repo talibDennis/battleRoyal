@@ -1,28 +1,48 @@
 package weapon;
 
+import armour.Armour;
+import stadium.Stadium;
+import warrior.Warrior;
+import weather.Weather;
+
 public class Axe extends Weapon {
-    private int baseDamage = 90;
-    private int dexCost = 50;
-    private int hitChance = 40;
+  private int damageAmount = 180;
+  private int dexterityCost = 80;
 
-    public Axe() {
-        super("Axe");
-        super.setBaseDamage(baseDamage);
-        super.setDexCost(dexCost);
-    } // constructor
+  public Axe() {
+    super();
+    super.setDamageAmount(damageAmount);
+    super.setDexterityCost(dexterityCost);
+    super.setWeaponType("Axe");
+  } // constructor()
 
-    // strike method
-  public int strike(int attackType, int strength, int dexterity, int aDexCost) {
-    int damageAmount = 0;
-    int roll = super.randNum.nextInt(100) + 1; // 1 - 100
-    roll += attackType * super.FACTOR_5; // hit chance REDUCED
-    roll -= dexterity / super.FACTOR_10; // hit chance INCREASED based on player dexterity
-    roll += aDexCost / super.FACTOR_10; // hit chance REDUCED based on the weight of the armour
+  public Axe(int damageAmount, int dexterityCost) {
+    super(); // must be the first line!
+    super.setDamageAmount(damageAmount);
+    super.setDexterityCost(dexterityCost);
+    super.setWeaponType("Axe");
+  } // constructor()
 
-    if(roll <= this.hitChance) { // hit
-      damageAmount = this.baseDamage + super.randNum.nextInt(strength / super.FACTOR_5);
+  public int strike(Warrior warrior, Weapon weapon, Armour armour, 
+    int attackType, Weather weather, Stadium stadium) {
+    int hitTarget = 65;
+    int attackScalar = 6;
+    int damage = 0;
+    int roll = randNum.nextInt(100) + 1; // 1 - 100
+    int damageBonus = warrior.getStrength() / (randNum.nextInt(5) + 9) + (attackScalar * attackType); // BONUS to damage
+    
+    hitTarget -= warrior.getDexterity() / 12; // BONUS to hitTarget
+    hitTarget += armour.getDexterityCost() / 3; // COST to hitTarget
+    hitTarget += weapon.getDexterityCost() / 3; // COST to hitTarget
+    hitTarget += weather.getDexterityCost() / 15; // COST to hitTarget
+    hitTarget += stadium.getDexterityCost() / 15; // COST to hitTarget
+
+    if(roll >= hitTarget) { // strike is a success!
+      damage = weapon.getDamageAmount() + damageBonus; // 50 + 17 = 67
     }
-
-    return damageAmount;
-  } // strike{}
+    else { // miss
+      damage = 0;
+    }
+    return damage;
+  } // strike()
 } // class
