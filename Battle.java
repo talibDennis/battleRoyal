@@ -26,7 +26,7 @@ public class Battle {
   private static Weapon eWeapon;
   private static Armour eArmour;
 
-  // variables?
+  // variables
   // private static boolean isPlayerTurn = true;
   private static boolean gameOver = false;
   private static String turn = "player";
