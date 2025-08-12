@@ -97,8 +97,8 @@ public class Battle {
         if(answer == 1) {
           resetGame();
           print.welcome(weather, stadium);
-          print.stats(player, pWeapon, pArmour);
-          print.stats(enemy, eWeapon, eArmour);
+          print.playerStats(player, pWeapon, pArmour);
+          print.enemyStats(enemy, eWeapon, eArmour);
         }
         else { // they said No to play again
           // do nothing
@@ -225,8 +225,8 @@ public class Battle {
             recreateObject(pos, line);
             pos++; // increment the pos!!
         } // while
-        print.stats(player, pWeapon, pArmour);
-        print.stats(enemy, eWeapon, eArmour);
+        print.playerStats(player, pWeapon, pArmour);
+        print.enemyStats(enemy, eWeapon, eArmour);
         newGame = false;
       }
     } catch (IOException e) {
@@ -264,7 +264,7 @@ public class Battle {
     createArmour(wPick, turn);
     wPick = 0;
 
-    print.stats(player, pWeapon, pArmour);
+    print.playerStats(player, pWeapon, pArmour);
     turn = "enemy"; // no longer players turn
 
     // Enemy Objects
@@ -280,7 +280,7 @@ public class Battle {
     wPick = randNum.nextInt(3) + 1; // 1 - 3
     createArmour(wPick, turn);
 
-    print.stats(enemy, eWeapon, eArmour);
+    print.enemyStats(enemy, eWeapon, eArmour);
     turn = "player"; // back to the players turn
   } // makeGame()
   private static void resetGame() {

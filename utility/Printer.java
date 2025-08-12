@@ -29,14 +29,6 @@ public class Printer {
 
   public Printer() {} // zero-arg contructor
 
-  public void welcome(Weather weather, Stadium stadium) {
-    System.out.println("///////////////////////////////////////////");
-    System.out.println("// Welcome to Warsim 2025 Beta edition.");
-    System.out.printf("// The stadium type is: %s!%n", stadium.getType());
-    System.out.printf("// It's a %s day, good luck!%n", weather.getType());
-    System.out.println("/////////////////////////////////////////");
-  } // welcomeMessage()
-
     public void gameOver(String winner) {
     System.out.println("///////////////////////////////////////////");
     System.out.printf("// %s Wins the match awesome job!%n", winner);
@@ -57,6 +49,13 @@ public class Printer {
     System.out.println("// 2) No");
     System.out.println("/////////////////////////////////////////");
   } // continueGameMenu()
+
+  public void stadiumMenu() {
+    System.out.println("\nPick a Stadium:");
+    System.out.printf("1) Ground%n");
+    System.out.printf("2) Hill%n");
+    System.out.printf("3) Sand%n");
+  } // attackMenu()
 
   public void warriorMenu() {
     System.out.println("Pick a warrior:");
@@ -79,27 +78,36 @@ public class Printer {
     System.out.printf("3) Platemail%n");
   } // printArmourMenu()
 
+  public void playerStats(Warrior warrior, Weapon weapon, Armour armour) {
+    System.out.printf("%nYou're a %s with a %s wearing %s%n.", 
+      warrior.getWarriorType(), weapon.getWeaponType(), armour.getArmourType());
+    System.out.printf("Health: %d%n", warrior.getHealth());
+    System.out.printf("Strength: %d%n", warrior.getStrength());
+    System.out.printf("Dexterity: %d%n", warrior.getDexterity());
+  } // stats()
+
+  public void enemyStats(Warrior warrior, Weapon weapon, Armour armour) {
+    System.out.printf("%nYour enemy is a %s with a %s wearing %s%n.", 
+      warrior.getWarriorType(), weapon.getWeaponType(), armour.getArmourType());
+    System.out.printf("Health: %d%n", warrior.getHealth());
+    System.out.printf("Strength: %d%n", warrior.getStrength());
+    System.out.printf("Dexterity: %d%n", warrior.getDexterity());
+  } // enemyStats()
+
+  public void welcome(Weather weather, Stadium stadium) {
+    System.out.println("///////////////////////////////////////////");
+    System.out.println("// Welcome to Warsim 2025 Beta edition.");
+    System.out.printf("// The stadium type is: %s!%n", stadium.getType());
+    System.out.printf("// It's a %s day, good luck!%n", weather.getType());
+    System.out.println("/////////////////////////////////////////");
+  } // welcomeMessage()
+
   public void attackMenu() {
     System.out.println("\nPick an Attack:");
     System.out.printf("1) Light%n");
     System.out.printf("2) Heavy%n");
     System.out.printf("3) Save & Quit%n");
   } // attackMenu()
-
-  public void stadiumMenu() {
-    System.out.println("\nPick a Stadium:");
-    System.out.printf("1) Level Ground%n");
-    System.out.printf("2) Hilly%n");
-    System.out.printf("3) Sandy%n");
-  } // attackMenu()
-
-  public void stats(Warrior warrior, Weapon weapon, Armour armour) {
-    System.out.printf("%nYou're are a: %s with a %s wearing %s%n", 
-      warrior.getWarriorType(), weapon.getWeaponType(), armour.getArmourType());
-    System.out.printf("Health: %d%n", warrior.getHealth());
-    System.out.printf("Strength: %d%n", warrior.getStrength());
-    System.out.printf("Dexterity: %d%n", warrior.getDexterity());
-  } // stats()
 
   public void attackResult(int damage, Warrior warrior, String who) {
     if(damage > 0) {
