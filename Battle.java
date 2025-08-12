@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class Battle {
   // object creation
-  private static Printer ink = new Printer();
+  private static Printer print = new Printer();
   private static Validator validator = new Validator();
   // private static MusicPlayer musicPlayer = new MusicPLayer();
   private static Random randNum = new Random();
@@ -36,14 +36,14 @@ public class Battle {
   private static int damage;
 
   public static void main(String[] args) {
-
+/*
     // Path to your audio file (must be .wav format)
     String musicFilePath = "T3_2025_04.wav";
         
     // Create a new thread to play music in the background
     Thread musicThread = new Thread(() -> musicPlayer.play(musicFilePath));
     musicThread.start();
-
+*/
     gameSetup(); // creates combantants, weapons, armour, weather and stadium
     print.welcome(weather, stadium);
 

@@ -23,31 +23,6 @@ public class Validator {
       print.armourMenu();
     }
 
-  /*public int validatePick(int maxVal) {
-    choice = 0;
-
-    while (true) {
-      System.out.printf("Enter a number between 1 & %d:%n", maxVal);
-      try { // wraps code that can break
-        choice = Integer.parseInt(input.nextLine());
-
-        if (choice >= 1 && choice <= maxVal) {
-          System.out.println("You entered: " + choice);
-          break; // valid input, exit loop
-        } else {
-          System.out.printf("Invalid number. Please enter a number between 1 & %d%n", + maxVal);
-        }
-      } // try
-      catch (NumberFormatException e) { // runs only on error
-        System.out.println("That's not a valid number. Please try again.");
-      } // catch
-      finally { // always runs!
-        // do nothing
-      }
-    } // while
-     return choice;
-  } // validate()*/
-    //----------------------------------------------
     while(!isValid) {
       try {
         number = input.nextInt();
@@ -73,7 +48,7 @@ public class Validator {
     return number;
   } // validateNumer()
 
-  public int validateAttackPick(int maxVal) {
+  public int validateAttackType() {
     boolean isValid = false;
     print.attackMenu();
 
@@ -103,6 +78,35 @@ public class Validator {
     return number;
   } // validate()
 
+  public int validateStadium() {
+    boolean isValid = false;
+    print.stadiumMenu();
+
+    while(!isValid) {
+      try {
+        number = input.nextInt();
+        // Range validation
+        if (number < 1 || number > 3) {
+          throw new IllegalArgumentException("Number is out of the valid range (1-3).");
+        }
+        isValid = true;
+      } // try
+      catch (InputMismatchException e) {
+        System.out.println("Error: Invalid input. Please enter an integer.");
+        input.nextLine();
+      } // input mismatch catch
+      catch (IllegalArgumentException elivs) {
+        System.out.println("Error: " + elivs.getMessage());
+      } // illegal arg catch
+      finally { // finally always runs!
+        if (!isValid) {
+          System.out.println("Please try again with valid input.");
+        }
+      } // finally
+    } // while()
+    return number;
+  } // validateNumer()
+  
   public int validatePlayAgain() {
     boolean isValid = false;
     print.playAgainMenu();

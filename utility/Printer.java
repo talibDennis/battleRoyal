@@ -92,12 +92,6 @@ public class Printer {
     System.out.printf("2) Hilly%n");
     System.out.printf("3) Sandy%n");
   } // attackMenu()
-  
-  public void goodbye() {
-    System.out.println(YELLOW + "\n*********************************");
-    System.out.println(PURPLE + "///// Thank you for playing!! /////");
-    System.out.println(YELLOW + "***********************************\n" + RESET);
-  } // goodbye
 
   public void stats(Warrior warrior, Weapon weapon, Armour armour) {
     System.out.printf("%nYou're are a: %s with a %s wearing %s%n", 
