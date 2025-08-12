@@ -4,6 +4,7 @@ import armour.*;
 import stadium.*;
 import warrior.*;
 import weather.*;
+
 import java.util.Random;
 
 public abstract class Weapon {
@@ -12,32 +13,28 @@ public abstract class Weapon {
   protected Random randNum = new Random();
   protected String weaponType;
 
-  public Weapon(String type) {
-    this.type = type;
-  } // constructor
+  public Weapon() {} // constructor()
 
   // getters
-  public String getType() {
-    return this.type;
-  } 
-  public int getBaseDamage() {
-    return this.baseDamage;
-  }
-  public int getDexCost() {
-    return this.dexCost;
-  }
-  // poloymorphic strike method
-  public abstract int strike(int attackType, int strength, int dexterity, int aDexCost);
-
+  public int getDamageAmount() {
+    return this.damageAmount;
+  } // getDamageAmount()
+  public int getDexterityCost() {
+    return this.dexterityCost;
+  } // getDexterityCost()
+  public String getWeaponType() {
+    return this.weaponType;
+  } // getWeaponType()
+ 
   // setters
-  public void setType(String type) {
-    this.type = type;
-  } 
-  public void setBaseDamage(int baseDamage) {
-    this.baseDamage = baseDamage;
-  }
-  public void setDexCost(int dexCost) {
-    this.dexCost = dexCost;
-  }
+  public void setDamageAmount(int damageAmount) {
+    this.damageAmount = damageAmount;
+  } // setDamageAmount()
+  public void setWeaponType(String weaponType) {
+    this.weaponType = weaponType;
+  } // setWeaponType()
+
+   // poloymorphic strike method
+  public abstract int strike(Warrior warrior, Weapon weapon, Armour armour, int attackType, Weather weather, Stadium stadium);
 
 } // class
