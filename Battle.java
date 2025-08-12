@@ -1,5 +1,5 @@
 import armour.*;
-import stadium.*;
+import terrain.*;
 import utility.*;
 import warrior.*;
 import weapon.*;
@@ -18,7 +18,7 @@ public class Battle {
   // private static MusicPlayer musicPlayer = new MusicPLayer();
   private static Random randNum = new Random();
   private static Weather weather;
-  private static Stadium stadium;
+  private static Terrain stadium;
   private static Warrior player;
   private static Weapon pWeapon;
   private static Armour pArmour;

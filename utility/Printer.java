@@ -3,8 +3,8 @@ package utility;
 import warrior.*;
 import weapon.*;
 import armour.*;
+import terrain.*;
 import weather.*;
-import stadium.*;
 
 public class Printer {
   // ANSI escape codes
@@ -94,7 +94,7 @@ public class Printer {
     System.out.printf("Dexterity: %d%n", warrior.getDexterity());
   } // enemyStats()
 
-  public void welcome(Weather weather, Stadium stadium) {
+  public void welcome(Weather weather, Terrain stadium) {
     System.out.println("///////////////////////////////////////////");
     System.out.println("// Welcome to Warsim 2025 Beta edition.");
     System.out.printf("// The stadium type is: %s!%n", stadium.getType());

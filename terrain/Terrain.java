@@ -1,13 +1,13 @@
-package stadium;
+package terrain;
 
 import java.util.Random;
 
-public abstract class Stadium {
+public abstract class Terrain {
   protected int dexterityCost;
   protected String type;
   protected Random randNum = new Random();
 
-  public Stadium() { } // constructor
+  public Terrain() { } // constructor
 
   // getters
   public int getDexterityCost() {

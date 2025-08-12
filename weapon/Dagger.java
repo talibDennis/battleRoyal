@@ -1,7 +1,7 @@
 package weapon;
 
 import armour.Armour;
-import stadium.Stadium;
+import terrain.Terrain;
 import warrior.Warrior;
 import weather.Weather;
 
@@ -24,7 +24,7 @@ public class Dagger extends Weapon {
   } // constructor()
 
   public int strike(Warrior warrior, Weapon weapon, Armour armour, 
-    int attackType, Weather weather, Stadium stadium) {
+    int attackType, Weather weather, Terrain stadium) {
     int hitTarget = 45;
     int attackScalar = 2;
     int damage = 0;

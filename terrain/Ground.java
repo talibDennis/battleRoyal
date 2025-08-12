@@ -1,16 +1,16 @@
-package stadium;
+package terrain;
 
-public class Sand extends Stadium {
-  private int dexterityCost = randNum.nextInt(6) + 7; // 7 - 12
-  private String type = "Sand";
+public class Ground extends Terrain {
+  private int dexterityCost = randNum.nextInt(3) + 1; //  1 2 3
+  private String type = "Ground";
 
-  public Sand() {
+  public Ground() {
     super();
     super.setDexterityCost(this.dexterityCost);
     super.setType(this.type);
   } // constructor
 
-  public Sand(int dexterityCost) {
+  public Ground(int dexterityCost) {
     super();
     super.setDexterityCost(this.dexterityCost);
     super.setType(this.type);

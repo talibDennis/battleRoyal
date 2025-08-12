@@ -1,7 +1,7 @@
 package weapon;
 
 import armour.*;
-import stadium.*;
+import terrain.*;
 import warrior.*;
 import weather.*;
 
@@ -38,6 +38,6 @@ public abstract class Weapon {
   } // setWeaponType()
 
    // poloymorphic strike method
-  public abstract int strike(Warrior warrior, Weapon weapon, Armour armour, int attackType, Weather weather, Stadium stadium);
+  public abstract int strike(Warrior warrior, Weapon weapon, Armour armour, int attackType, Weather weather, Terrain stadium);
 
 } // class

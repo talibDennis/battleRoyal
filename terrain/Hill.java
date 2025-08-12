@@ -1,6 +1,6 @@
-package stadium;
+package terrain;
 
-public class Hill extends Stadium {
+public class Hill extends Terrain {
   private int dexterityCost = randNum.nextInt(3) + 4; // 4 - 6
   private String type = "Hill";
 
