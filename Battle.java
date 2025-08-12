@@ -96,7 +96,7 @@ public class Battle {
       isPlayerTurn = !isPlayerTurn; // toggles turn from player to enemy yada yada
     } // while
 
-    ink.goodbye();
+    // ink.goodbye();
     
   } // main()
 
