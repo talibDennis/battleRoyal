@@ -29,11 +29,6 @@ public class Printer {
 
   public Printer() {} // zero-arg contructor
 
-    public void gameOver(String winner) {
-    System.out.println("///////////////////////////////////////////");
-    System.out.printf("// %s Wins the match awesome job!%n", winner);
-    System.out.println("/////////////////////////////////////////");
-  } // welcomeMessage()
   public void playAgainMenu() {
     System.out.println("///////////////////////////////////////////");
     System.out.println("// Play again?");
@@ -122,4 +117,10 @@ public class Printer {
     }
   } // attackResult()
   
+    public void gameOver(String winner) {
+    System.out.println("///////////////////////////////////////////");
+    System.out.printf("// %s Wins the match awesome job!%n", winner);
+    System.out.println("/////////////////////////////////////////");
+  } // game over message
+    
 } // class

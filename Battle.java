@@ -190,10 +190,10 @@ public class Battle {
           weather = new Calm();
         break;
       case 2: // Wind
-          weather = new Wind();
+          weather = new Windy();
         break;
       case 3: // Storm
-          weather = new Storm();
+          weather = new Stormy();
         break;
     } // switch
   } // createWeather()
@@ -595,11 +595,11 @@ public class Battle {
               Integer.parseInt(values[1]));
             break;
           case "2": // wind
-            weather = new Wind(
+            weather = new Windy(
               Integer.parseInt(values[1]));
             break;
           case "3": // storm
-            weather = new Storm(
+            weather = new Stormy(
               Integer.parseInt(values[1]));
             break;
           }
