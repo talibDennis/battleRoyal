@@ -11,7 +11,7 @@ public class Human extends Warrior { // extends is for inheritence
 
     public Human() { // new Human!
         super(); // calls the parent constructor
-        // 0 - 39 + 200 = 200 to 239 health range
+                                            // 50 (0 - 49) + 50
         super.setHealth(super.randNum.nextInt(this.bonusHealth) + this.minHealth);
         super.setStrength(super.randNum.nextInt(this.bonusStrength) + this.minStrength);
         super.setDexterity(super.randNum.nextInt(this.bonusDexterity) + this.minDexterity);
