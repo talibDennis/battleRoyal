@@ -96,7 +96,7 @@ public class Battle {
       isPlayerTurn = !isPlayerTurn; // toggles turn from player to enemy yada yada
     } // while
 
-    // ink.goodbye();
+    ink.goodbye();
     
   } // main()
 
@@ -248,5 +248,6 @@ public class Battle {
     // prints all the stats!
     ink.printStats(player, pWeapon, pArmour, enemy, eWeapon, eArmour);
   } // makeGame()
+
 
 } // class
