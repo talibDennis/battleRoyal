@@ -31,17 +31,17 @@ public class Printer {
 
   public void playAgainMenu() {
     System.out.println("///////////////////////////////////////////");
-    System.out.println("// Play again?");
-    System.out.println("// 1) Yes");
-    System.out.println("// 2) No");
+    System.out.println("** Play again?");
+    System.out.println("** 1) Yes");
+    System.out.println("** 2) No");
     System.out.println("/////////////////////////////////////////");
   } // playAgain()
 
   public void continueGameMenu() {
     System.out.println("///////////////////////////////////////////");
-    System.out.println("// Continue Game?");
-    System.out.println("// 1) Yes");
-    System.out.println("// 2) No");
+    System.out.println("** Continue Game?");
+    System.out.println("** 1) Yes");
+    System.out.println("** 2) No");
     System.out.println("/////////////////////////////////////////");
   } // continueGameMenu()
 
@@ -89,11 +89,14 @@ public class Printer {
     System.out.printf("Dexterity: %d%n", warrior.getDexterity());
   } // enemyStats()
 
+  // game-start welcome screen
   public void welcome(Weather weather, Terrain stadium) {
     System.out.println("///////////////////////////////////////////");
     System.out.println("// Welcome to Warsim 2025 Beta edition.");
-    System.out.printf("// The stadium type is: %s!%n", stadium.getType());
-    System.out.printf("// It's a %s day, good luck!%n", weather.getType());
+    System.out.printf("** The stadium type is: %s!%n", stadium.getType());
+    System.out.printf("** It's a %s day.%n", weather.getType());
+    System.out.printf("** Spoils go to the victor!%n"); // implement a scorring system
+
     System.out.println("/////////////////////////////////////////");
   } // welcomeMessage()
 
@@ -119,7 +122,7 @@ public class Printer {
   
     public void gameOver(String winner) {
     System.out.println("///////////////////////////////////////////");
-    System.out.printf("// %s Wins the match awesome job!%n", winner);
+    System.out.printf("** %s Wins the match awesome job!%n", winner);
     System.out.println("/////////////////////////////////////////");
   } // game over message
     
