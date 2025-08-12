@@ -1,35 +1,34 @@
 package armour;
 
-public abstract class Armour {
-  private String type;
-  private int protectionAmount;
-  private int dexCost;
+// library imports Random, Scanner yada yada
 
-  public Armour(String type) {
-    this.type = type;
-  } // constructor
+public abstract class Armour { // 'is-a' is inheritance Leather is-a Armour
+  private int armourAmount;
+  private int dexterityCost;
+  private String armourType;
 
-  // getters
-  public String getType() {
-    return this.type;
-  }
-  public int getProtectionAmount() {
-    return this.protectionAmount;
-  }
-  public int getDexCost() {
-    return this.dexCost;
-  }
+  public Armour() {} // constructor
 
-  // setters
-  public void setType(String type) {
-    this.type = type;
-  }
-  public void setProtectionAmount(int protectionAmount) {
-    this.protectionAmount = protectionAmount;
-  }
-  public void setDexCost(int dexCost) {
-    this.dexCost = dexCost;
-  }
-  // public abstract void setArmourReduction(int damageAmount);
+  // getters or accessors
+  public int getArmourAmount() {
+    return this.armourAmount;
+  } // getArmourAmount()
+  public int getDexterityCost() {
+    return this.dexterityCost;
+  } // getDexterityCost()
+  public String getArmourType() {
+    return this.armourType;
+  } // getArmourType()
+
+  // setters or Mutators
+  public void setArmourAmount(int armourAmount) {
+    this.armourAmount = armourAmount;
+  } // setArmourAmount()
+  public void setDexterityCost(int dexterityCost) {
+    this.dexterityCost = dexterityCost;
+  } // setDexterityCost()
+  public void setArmourType(String armourType) {
+    this.armourType = armourType;
+  } // setArmourType()
 
 } // class
