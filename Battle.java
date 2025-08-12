@@ -239,7 +239,7 @@ public class Battle {
   } // gameSetup()
   private static void makeGame() {
     // Vote for a stadium
-    int pStadiumPick = validator.validateStadium();
+    int pStadiumPick = validator.validateTerrain();
     int eStadiumPick = randNum.nextInt(3) + 1;
     int[] picks = { pStadiumPick, eStadiumPick };
     createStadium(picks);
