@@ -45,7 +45,7 @@ public abstract class Warrior {
     public void setDexterity(int dexterity) {
         this.dexterity = dexterity;
     } // setDexterity()
-    public void setWorriorType(String warriorType) {
+    public void setWarriorType(String warriorType) {
         this.warriorType = warriorType;
     } // setWorriorType()
     public void takeDamage(int damageAmount) {

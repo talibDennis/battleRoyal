@@ -1,24 +1,28 @@
-
 package warrior;
 
 public class Elf extends Warrior {
-    private int minHealth = 240; // min amount a Elf warrior starts with
-    private int bonusHealth = 50; // the bonus or extra range for the health stat
-    private int minStrength = 70;
-    private int bonusStrength = 20;
-    private int minDexterity = 150;
-    private int bonusDexterity = 75;
+  private int baseHealth = 50;
+  private int bonusHealth = 50;
+  private int baseStrength = 40;
+  private int bonusStrength = 30;
+  private int baseDexterity = 90; // (0 - 74) + 90 => 90 - 163
+  private int bonusDexterity = 75;
+  private String warriorType = "Elf";
 
-    public Elf() {
-        super("Elf");
-        // 0 - 79 + 120 = 120 to 179
-        super.setHealth(super.randNum.nextInt(this.bonusHealth) + this.minHealth);
-        super.setStrength(super.randNum.nextInt(this.bonusStrength) + this.minStrength);
-        super.setDexterity(super.randNum.nextInt(this.bonusDexterity) + this.minDexterity);
-    } // contructor
+  public Elf() {
+    super(); // calls the parent contructor
+    super.setHealth(super.randNum.nextInt(bonusHealth) + baseHealth);
+    super.setStrength(super.randNum.nextInt(bonusStrength) + baseStrength);
+    super.setDexterity(super.randNum.nextInt(bonusDexterity) + baseDexterity);
+    super.setWarriorType(this.warriorType);
+  } // constructor()
 
-    // getters
-
-    // setters
-
+  public Elf(int health, int strength, int dexterity) {
+    super(); // calls the parent contructor
+    super.setHealth(health);
+    super.setStrength(strength);
+    super.setDexterity(dexterity);
+    super.setWarriorType(this.warriorType);
+  } // constructor()
+  
 } // class
