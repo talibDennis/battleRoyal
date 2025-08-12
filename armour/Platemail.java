@@ -1,21 +1,21 @@
 package armour;
 
 public class Platemail extends Armour {
-  // should be a calc with damage NOT a straight protection amount
-  private int protectionAmount = 60; // calc a damage of 60%
-  private int dexCost = 65;
-  private int armourDurabilityFactor = 15;
+  private int armourAmount = 100;
+  private int dexterityCost = 70;
+  private String armourType = "Platemail";
 
   public Platemail() {
-    super("Platemail");
-    super.setProtectionAmount(protectionAmount);
-    super.setDexCost(dexCost);
+    super();
+    super.setArmourAmount(armourAmount);
+    super.setDexterityCost(dexterityCost);
+    super.setArmourType(armourType);
   } // constructor
 
-  // setters
-  public void setArmourReduction(int damageAmount) {
-    // 10 damage would take away 1 armour points
-    this.protectionAmount -= damageAmount / armourDurabilityFactor;
-  }
-
+  public Platemail(int armourAmount, int dexterityCost) {
+    super();
+    super.setArmourAmount(this.armourAmount);
+    super.setDexterityCost(this.dexterityCost);
+    super.setArmourType(this.armourType);
+  } // constructor
 } // class

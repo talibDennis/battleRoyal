@@ -1,20 +1,21 @@
 package armour;
 
 public class Leather extends Armour {
-  private int protectionAmount = 20;
-  private int dexCost = 5;
-  private int armourDurabilityFactor = 10;
+  private int armourAmount = 10;
+  private int dexterityCost = 5;
+  private String armourType = "Leather";
 
   public Leather() {
-    super("Leather");
-    super.setProtectionAmount(protectionAmount);
-    super.setDexCost(dexCost);
+    super();
+    super.setArmourAmount(this.armourAmount);
+    super.setDexterityCost(this.dexterityCost);
+    super.setArmourType(this.armourType);
   } // constructor
 
-  // setters
-  public void setArmourReduction(int damageAmount) {
-    // 10 damage would take away 1 armour points
-    this.protectionAmount -= damageAmount / armourDurabilityFactor;
-  }
-
+  public Leather(int armourAmount, int dexterityCost) {
+    super();
+    super.setArmourAmount(this.armourAmount);
+    super.setDexterityCost(this.dexterityCost);
+    super.setArmourType(this.armourType);
+  } // constructor
 } // class
