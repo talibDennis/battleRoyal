@@ -433,13 +433,13 @@ public class Battle {
       int weatherType = 0;
       String weatherName = weather.getType();
       switch (weatherName) {
-        case "Calm":
+        case "Calm😌 ":
           weatherType = 1;
         break;
-        case "Windy":
+        case "Windy🌬️ ":
           weatherType = 2;
         break;
-        case "Stormy":
+        case "Stormy🌪️ ":
           weatherType = 3;
         break;
       }
@@ -594,11 +594,11 @@ public class Battle {
             weather = new Calm(
               Integer.parseInt(values[1]));
             break;
-          case "2": // wind
+          case "2": // windy
             weather = new Windy(
               Integer.parseInt(values[1]));
             break;
-          case "3": // storm
+          case "3": // stormy
             weather = new Stormy(
               Integer.parseInt(values[1]));
             break;

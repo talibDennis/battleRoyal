@@ -2,7 +2,7 @@ package weather;
 
 public class Calm extends Weather {
   private int dexterityCost = randNum.nextInt(3) + 1; // 1 2 3
-  private String type = "Calm";
+  private String type = "Calm😌 ";
 
   public Calm() {
     super();
