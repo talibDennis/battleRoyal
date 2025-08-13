@@ -47,7 +47,7 @@ public class Battle {
 */
     gameSetup(); // creates combantants, weapons, armour, weather and terrain
     print.welcome(weather, terrain);
-
+// playAgain
     //===================>>
     // Main Game Loop
     while(!gameOver) {
@@ -155,7 +155,7 @@ public class Battle {
           eWeapon = new Axe();
         break;
       default:
-        System.out.println("Select 1 - 4 only!");
+        System.out.println("Select 1 - 3 only!");
         break;
     } // switch
   } // createWarrior()
@@ -180,7 +180,7 @@ public class Battle {
           eArmour = new Platemail();
         break;
       default:
-        System.out.println("Select 1 - 4 only!");
+        System.out.println("Select 1 - 3 only!");
         break;
     } // switch
   } // createArmour()

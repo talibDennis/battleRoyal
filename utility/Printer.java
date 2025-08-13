@@ -29,20 +29,18 @@ public class Printer {
 
   public Printer() {} // zero-arg contructor
 
-  public void playAgainMenu() {
-    System.out.println("///////////////////////////////////////////");
-    System.out.println("** Play again?");
-    System.out.println("** 1) Yes");
-    System.out.println("** 2) No");
-    System.out.println("/////////////////////////////////////////");
-  } // playAgain()
-
-  public void continueGameMenu() {
-    System.out.println("///////////////////////////////////////////");
-    System.out.println("** Continue Game?");
-    System.out.println("** 1) Yes");
-    System.out.println("** 2) No");
-    System.out.println("/////////////////////////////////////////");
+    public void continueGameMenu() {
+    
+    System.out.println(" _       __                _         ");
+    System.out.println("| |     / /___ ___________(_)___ ___ ");
+    System.out.println("| | /| / / __ `/ ___/ ___/ / __ `__ \\");
+    System.out.println("| |/ |/ / /_/ / /  (__  ) / / / / / /");
+    System.out.println("|__/|__/\\__,_/_/  /____/_/_/ /_/ /_/ ");
+    System.out.println("                                     ");
+    System.out.println("------------------------------------------");
+    System.out.println("Continue Game?");
+    System.out.println("1) Yes");
+    System.out.println("2) No");
   } // continueGameMenu()
 
   public void terrainMenu() {
@@ -125,5 +123,13 @@ public class Printer {
     System.out.printf("** %s Wins the match awesome job!%n", winner);
     System.out.println("/////////////////////////////////////////");
   } // game over message
+  
+  public void playAgainMenu() {
+    System.out.println("///////////////////////////////////////////");
+    System.out.println("** Play again?");
+    System.out.println("** 1) Yes");
+    System.out.println("** 2) No");
+    System.out.println("/////////////////////////////////////////");
+  } // playAgain()
     
 } // class
