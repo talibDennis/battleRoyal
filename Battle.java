@@ -18,7 +18,7 @@ public class Battle {
   // private static MusicPlayer musicPlayer = new MusicPLayer();
   private static Random randNum = new Random();
   private static Weather weather;
-  private static Terrain stadium;
+  private static Terrain terrain;
   private static Warrior player;
   private static Weapon pWeapon;
   private static Armour pArmour;
@@ -44,8 +44,8 @@ public class Battle {
     Thread musicThread = new Thread(() -> musicPlayer.play(musicFilePath));
     musicThread.start();
 */
-    gameSetup(); // creates combantants, weapons, armour, weather and stadium
-    print.welcome(weather, stadium);
+    gameSetup(); // creates combantants, weapons, armour, weather and terrain
+    print.welcome(weather, terrain);
 
     //===================>>
     // Main Game Loop
@@ -57,7 +57,7 @@ public class Battle {
           gameOver = true;
         }
         else {
-          damage = pWeapon.strike(player, pWeapon, pArmour, choice, weather, stadium);
+          damage = pWeapon.strike(player, pWeapon, pArmour, choice, weather, terrain);
           damage -= eArmour.getArmourAmount();
           if(damage > 0) {
             enemy.takeDamage(damage);
@@ -73,7 +73,7 @@ public class Battle {
     else { // enemy turn logic code
       choice = randNum.nextInt(2) + 1;
       
-      damage = eWeapon.strike(enemy, eWeapon, eArmour, choice, weather, stadium);
+      damage = eWeapon.strike(enemy, eWeapon, eArmour, choice, weather, terrain);
       damage -= pArmour.getArmourAmount();
       if(damage > 0) {
         player.takeDamage(damage);
@@ -96,7 +96,7 @@ public class Battle {
         int answer = validator.validatePlayAgain();
         if(answer == 1) {
           resetGame();
-          print.welcome(weather, stadium);
+          print.welcome(weather, terrain);
           print.playerStats(player, pWeapon, pArmour);
           print.enemyStats(enemy, eWeapon, eArmour);
         }
@@ -197,20 +197,20 @@ public class Battle {
         break;
     } // switch
   } // createWeather()
-  private static void createStadium(int[] picks) {
+  private static void createTerrain(int[] picks) {
     int pick = picks[randNum.nextInt(picks.length)];
     switch (pick) {
       case 1: // Ground
-          stadium = new Ground();
+          terrain = new Ground();
         break;
       case 2: // Hill
-          stadium = new Hill();
+          terrain = new Hill();
         break;
       case 3: // Sand
-          stadium = new Sand();
+          terrain = new Sand();
         break;
     } // switch
-  } // createStadium()
+  } // createTerrain()
   private static void gameSetup() {
     boolean newGame = true;
     // Reading from a file
@@ -238,18 +238,18 @@ public class Battle {
     }
   } // gameSetup()
   private static void makeGame() {
-    // Vote for a stadium
-    int pStadiumPick = validator.validateTerrain();
-    int eStadiumPick = randNum.nextInt(3) + 1;
-    int[] picks = { pStadiumPick, eStadiumPick };
-    createStadium(picks);
+    // vote for a terrain
+    int pTerrainPick = validator.validateTerrain();
+    int eTerrainPick = randNum.nextInt(3) + 1;
+    int[] picks = { pTerrainPick, eTerrainPick };
+    createTerrain(picks);
 
-    // Randomize the weather
+    // randomize the weather
     int weatherPick = randNum.nextInt(3) + 1; // 1, 2, 3
     createWeather(weatherPick);
 
-    // Player Objects
-    // Player warrior
+    // player objects
+    // player warrior
     int wPick = validator.validateNumber("Warrior");
     createWarrior(wPick, turn);
     wPick = 0;
@@ -286,7 +286,7 @@ public class Battle {
   private static void resetGame() {
     // resetting all the needed objects and vars
     weather = null;
-    stadium = null;
+    terrain = null;
     player = null;
     enemy = null;
     pWeapon = null;
@@ -411,22 +411,22 @@ public class Battle {
       writer.write(eArmour.getDexterityCost() + "\n");
 
       //================>>
-      // Stadium
-      int stadiumType = 0;
-      String stadiumName = stadium.getType();
-      switch (stadiumName) {
+      // terrain
+      int terrainType = 0;
+      String terrainName = terrain.getType();
+      switch (terrainName) {
         case "Ground":
-          stadiumType = 1;
+          terrainType = 1;
         break;
         case "Hill":
-          stadiumType = 2;
+          terrainType = 2;
         break;
         case "Sand":
-          stadiumType = 3;
+          terrainType = 3;
         break;
       }
-      writer.write(stadiumType + ", ");
-      writer.write(stadium.getDexterityCost() + "\n");
+      writer.write(terrainType + ", ");
+      writer.write(terrain.getDexterityCost() + "\n");
       
       //================>>
       // Weather
@@ -572,18 +572,18 @@ public class Battle {
             break;
           }
         break;
-      case 7: // stadium
+      case 7: // terrain
         switch (values[0]) {
           case "1": // ground
-            stadium = new Ground(
+            terrain = new Ground(
               Integer.parseInt(values[1]));
             break;
           case "2": // hill
-            stadium = new Hill(
+            terrain = new Hill(
               Integer.parseInt(values[1]));
             break;
           case "3": // sand
-            stadium = new Sand(
+            terrain = new Sand(
               Integer.parseInt(values[1]));
             break;
           }
