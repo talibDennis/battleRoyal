@@ -109,9 +109,9 @@ public class Printer {
 
   public void attackResult(int damage, Warrior warrior, String who) {
     if(damage > 0) {
-      System.out.printf(GREEN + "%n%s %s HITS for %d points!%n", who, warrior.getWarriorType(), damage);
+      System.out.printf(GREEN + "%n%s's %s deals %d points of damage!%n", who, warrior.getWarriorType(), damage);
       System.out.printf("%d health points removed!%n", damage);
-      System.out.printf("%d health points remain!%n" + RESET, warrior.getHealth());
+      System.out.printf("Health points remaining: %d!%n" + RESET, warrior.getHealth());
       System.out.println();
     }
     else {

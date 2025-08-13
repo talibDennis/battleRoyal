@@ -4,7 +4,7 @@ import utility.*;
 import warrior.*;
 import weapon.*;
 import weather.*;
-
+// who
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -29,7 +29,7 @@ public class Battle {
   // variables
   // private static boolean isPlayerTurn = true;
   private static boolean gameOver = false;
-  private static String turn = "player";
+  private static String turn = "Player";
   private static String winner = "";
   private static String gameSave = "gameSave.txt";
   private static int choice;
@@ -50,7 +50,7 @@ public class Battle {
     //===================>>
     // Main Game Loop
     while(!gameOver) {
-      if(turn == "player") { // player turn logic/code
+      if(turn == "Player") { // player turn logic/code
         choice = validator.validateAttackType();
         if(choice == 3) { // they want to save and quit
           saveGame();
@@ -87,7 +87,7 @@ public class Battle {
       else {
         print.attackResult(damage, player, turn);
       }
-      turn = "player";
+      turn = "Player";
     } // enemy if
       // if the game has ended (gameOver = true)
       // ask if they would like to play again
@@ -112,19 +112,19 @@ public class Battle {
   private static void createWarrior(int wPick, String who) {
     switch (wPick) {
       case 1: // Human
-        if(who == "player")
+        if(who == "Player")
           player = new Human();
         else 
           enemy = new Human();
         break;
       case 2: // Elf
-        if(who == "player")
+        if(who == "Player")
           player = new Elf();
         else 
           enemy = new Elf();
         break;
       case 3: // Orc
-        if(who == "player")
+        if(who == "Player")
           player = new Orc();
         else 
           enemy = new Orc();
@@ -137,19 +137,19 @@ public class Battle {
   private static void createWeapon(int wPick, String who) {
     switch (wPick) {
       case 1: // Dagger
-        if(who == "player")
+        if(who == "Player")
           pWeapon = new Dagger();
         else 
           eWeapon = new Dagger();
         break;
       case 2: // Elf
-        if(who == "player")
+        if(who == "Player")
           pWeapon = new Sword();
         else 
           eWeapon = new Sword();
         break;
       case 3: // Orc
-        if(who == "player")
+        if(who == "Player")
           pWeapon = new Axe();
         else 
           eWeapon = new Axe();
@@ -162,19 +162,19 @@ public class Battle {
   private static void createArmour(int wPick, String who) {
     switch (wPick) {
       case 1: // Leather
-        if(who == "player")
+        if(who == "Player")
           pArmour = new Leather();
         else 
           eArmour = new Leather();
         break;
       case 2: // Chainmail
-        if(who == "player")
+        if(who == "Player")
           pArmour = new Chainmail();
         else 
           eArmour = new Chainmail();
         break;
       case 3: // Platemail
-        if(who == "player")
+        if(who == "Player")
           pArmour = new Platemail();
         else 
           eArmour = new Platemail();
@@ -281,7 +281,7 @@ public class Battle {
     createArmour(wPick, turn);
 
     print.enemyStats(enemy, eWeapon, eArmour);
-    turn = "player"; // back to the players turn
+    turn = "Player"; // back to the players turn
   } // makeGame()
   private static void resetGame() {
     // resetting all the needed objects and vars
@@ -295,7 +295,7 @@ public class Battle {
     eArmour = null;
 
     gameOver = false;
-    turn = "player";
+    turn = "Player";
     winner = "";
     choice = 0;
     damage = 0;
