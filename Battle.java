@@ -436,10 +436,10 @@ public class Battle {
         case "Calm":
           weatherType = 1;
         break;
-        case "Wind":
+        case "Windy":
           weatherType = 2;
         break;
-        case "Storm":
+        case "Stormy":
           weatherType = 3;
         break;
       }
