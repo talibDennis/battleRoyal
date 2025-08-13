@@ -30,6 +30,7 @@ public class Battle {
   // private static boolean isPlayerTurn = true;
   private static boolean gameOver = false;
   private static String turn = "Player";
+  // private static String[] turn = {"Player", "Enemy"};
   private static String winner = "";
   private static String gameSave = "gameSave.txt";
   private static int choice;
