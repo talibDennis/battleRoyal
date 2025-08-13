@@ -38,12 +38,19 @@ public class Printer {
     System.out.println("|__/|__/\\__,_/_/  /____/_/_/ /_/ /_/ ");
     System.out.println("                                     ");
     System.out.println("------------------------------------------");
-    System.out.println("Continue Game?");
+    System.out.println("⏩ Continue Game?");
     System.out.println("1) Yes");
     System.out.println("2) No");
   } // continueGameMenu()
 
   public void terrainMenu() {
+
+    System.out.println("    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _");
+    System.out.println("     /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\");
+    System.out.println("    /__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/");
+    System.out.println("   /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\  /\\");
+    System.out.println("  /__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/__\\/");
+    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     System.out.println("\nPick a Terrain:");
     System.out.printf("1) Ground%n");
     System.out.printf("2) Hill%n");
@@ -51,6 +58,18 @@ public class Printer {
   } // attackMenu()
 
   public void warriorMenu() {
+    System.out.println("/////////////////");
+    System.out.println("       />");
+    System.out.println("      /<|");
+    System.out.println("     /__|");
+    System.out.println("      ||");
+    System.out.println("      ||");
+    System.out.println("     /__\\");
+    System.out.println("    (____)");
+    System.out.println("     |  |");
+    System.out.println("     |  |");
+    System.out.println("    /____\\");
+    System.out.println("////////////////");
     System.out.println("Pick a warrior:");
     System.out.printf("1) Human%n");
     System.out.printf("2) Elf%n");
@@ -58,6 +77,18 @@ public class Printer {
   } // printWarriorMenu()
 
   public void weaponMenu() {
+    System.out.println(">>>>>>>>>>>>>>>");
+    System.out.println("     /\\");
+    System.out.println("    /  \\");
+    System.out.println("   /____\\");
+    System.out.println("    ||||");
+    System.out.println("    ||||");
+    System.out.println("    ||||");
+    System.out.println("    ||||");
+    System.out.println("    ||||");
+    System.out.println("    ||||");
+    System.out.println("    ||||");
+    System.out.println(">>>>>>>>>>>>>>>");
     System.out.println("Pick a weapon:");
     System.out.printf("1) Dagger%n");
     System.out.printf("2) Sword%n");
@@ -65,6 +96,17 @@ public class Printer {
   } // printWeaponMenu()
 
   public void armourMenu() {
+    System.out.println("><><><><><><><><><><><");
+    System.out.println("      _______");
+    System.out.println("     /       \\");
+    System.out.println("    /         \\");
+    System.out.println("   |   /\\/\\  |");
+    System.out.println("   |  ( o.o )  |");
+    System.out.println("   |   > ^ <   |");
+    System.out.println("    \\         /");
+    System.out.println("     \\_______/");
+    System.out.println("       \\___/");
+    System.out.println("><><><><><><><><><><><");
     System.out.println("Pick your armour:");
     System.out.printf("1) Leather%n");
     System.out.printf("2) Chainmail%n");
@@ -72,6 +114,13 @@ public class Printer {
   } // printArmourMenu()
 
   public void playerStats(Warrior warrior, Weapon weapon, Armour armour) {
+    System.out.println("\n");
+    System.out.println("██████╗ ██╗      █████╗ ██╗   ██╗███████╗██████╗ \n");
+    System.out.println("██╔══██╗██║     ██╔══██╗██║   ██║██╔════╝██╔══██╗\n");
+    System.out.println("██████╔╝██║     ███████║██║   ██║█████╗  ██████╔╝\n");
+    System.out.println("██╔═══╝ ██║     ██╔══██║╚██╗ ██╔╝██╔══╝  ██╔══██╗\n");
+    System.out.println("██║     ███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║\n");
+    System.out.println("╚═╝     ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝");
     System.out.printf("%nYou're a %s with a %s wearing %s.%n", 
       warrior.getWarriorType(), weapon.getWeaponType(), armour.getArmourType());
     System.out.printf("Health: %d%n", warrior.getHealth());
@@ -80,6 +129,13 @@ public class Printer {
   } // stats()
 
   public void enemyStats(Warrior warrior, Weapon weapon, Armour armour) {
+    System.out.println("\n");
+    System.out.println("███████╗███╗   ██╗███████╗███╗   ███╗███╗   ██╗██╗   ██╗\n");
+    System.out.println("██╔════╝████╗  ██║██╔════╝████╗ ████║████╗  ██║╚██╗ ██╔╝ \n");
+    System.out.println("█████╗  ██╔██╗ ██║█████╗  ██╔████╔██║██╔██╗ ██║ ╚████╔╝\n");
+    System.out.println("██╔══╝  ██║╚██╗██║██╔══╝  ██║╚██╔╝██║██║╚██╗██║  ╚██╔╝\n");
+    System.out.println("███████╗██║ ╚████║███████╗██║ ╚═╝ ██║██║ ╚████║   ██║\n");
+    System.out.println("╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═══╝.  ╚═╝");
     System.out.printf("%nYour enemy is a %s with a %s wearing %s.%n", 
       warrior.getWarriorType(), weapon.getWeaponType(), armour.getArmourType());
     System.out.printf("Health: %d%n", warrior.getHealth());
