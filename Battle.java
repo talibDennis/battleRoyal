@@ -4,7 +4,7 @@ import utility.*;
 import warrior.*;
 import weapon.*;
 import weather.*;
-// who
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -90,7 +90,6 @@ public class Battle {
       turn = "Player";
     } // enemy if
       // if the game has ended (gameOver = true)
-      // ask if they would like to play again
       if (gameOver) {
         // ask them if they would like to play again?
         int answer = validator.validatePlayAgain();
